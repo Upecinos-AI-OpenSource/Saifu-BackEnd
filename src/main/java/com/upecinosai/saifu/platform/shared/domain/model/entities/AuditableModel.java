@@ -1,4 +1,5 @@
 package com.upecinosai.saifu.platform.shared.domain.model.entities;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -12,6 +13,7 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 public abstract class AuditableModel {
+
     @Getter
     @CreatedDate
     @Column(nullable = false, updatable = false)
