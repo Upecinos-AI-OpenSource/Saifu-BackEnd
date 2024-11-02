@@ -1,4 +1,4 @@
-package com.upecinosai.saifu.platform.finantialdata.interfaces.rest.transform;
+package com.upecinosai.saifu.platform.finantialData.interfaces.rest.transform;
 
 import com.upecinosai.saifu.platform.finantialData.domain.model.FinantialData;
 import com.upecinosai.saifu.platform.finantialData.interfaces.rest.resources.FinantialDataResource;
