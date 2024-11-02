@@ -1,4 +1,5 @@
 package com.upecinosai.saifu.platform.shared.domain.model.aggregates;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,7 +11,7 @@ import java.util.Date;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public abstract class AuditableAbstractAggregateRoot <T extends AbstractAggregateRoot<T>> extends AbstractAggregateRoot<T> {
+public abstract class AuditableAbstractAggregateRoot<T extends AbstractAggregateRoot<T>> extends AbstractAggregateRoot<T> {
 
     @Id
     @Getter

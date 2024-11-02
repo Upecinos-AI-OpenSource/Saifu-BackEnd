@@ -19,7 +19,6 @@ public class SnakeCaseWithPluralizedTablePhysicalNamingStrategy implements Physi
 
     @Override
     public Identifier toPhysicalTableName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-
         return this.toSnakeCase(this.toPlural(identifier));
     }
 
