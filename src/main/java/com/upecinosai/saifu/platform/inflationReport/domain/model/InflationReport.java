@@ -1,7 +1,7 @@
 package com.upecinosai.saifu.platform.inflationReport.domain.model;
 
-import jakarta.persistence.*;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity

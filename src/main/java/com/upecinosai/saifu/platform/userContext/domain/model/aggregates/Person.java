@@ -5,7 +5,8 @@ import com.upecinosai.saifu.platform.userContext.domain.model.valueobjects.Email
 import com.upecinosai.saifu.platform.userContext.domain.model.valueobjects.PersonName;
 import com.upecinosai.saifu.platform.userContext.domain.model.valueobjects.StreetAddress;
 import com.upecinosai.saifu.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
 public class Person extends AuditableAbstractAggregateRoot<Person> {

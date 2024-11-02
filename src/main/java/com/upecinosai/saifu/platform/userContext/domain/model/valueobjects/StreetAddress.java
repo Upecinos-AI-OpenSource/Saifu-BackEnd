@@ -1,6 +1,7 @@
 package com.upecinosai.saifu.platform.userContext.domain.model.valueobjects;
 
-import jakarta.persistence.Embeddable;
+
+import javax.persistence.Embeddable;
 
 @Embeddable
 public record StreetAddress(

@@ -1,8 +1,7 @@
 package com.upecinosai.saifu.platform.userContext.domain.model.aggregates;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user_consult")

@@ -2,11 +2,11 @@ package com.upecinosai.saifu.platform.profile.domain.model.aggregates;
 
 import com.upecinosai.saifu.platform.profile.domain.model.commands.CreatePlanCommand;
 import com.upecinosai.saifu.platform.profile.domain.model.entities.User;
-import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity

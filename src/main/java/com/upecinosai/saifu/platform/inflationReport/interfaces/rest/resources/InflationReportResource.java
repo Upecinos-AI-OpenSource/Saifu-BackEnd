@@ -1,7 +1,7 @@
 package com.upecinosai.saifu.platform.inflationReport.interfaces.rest.resources;
 
-import jakarta.annotation.Resource;
 
+import javax.annotation.*;
 import java.util.Date;
 
 @Resource
