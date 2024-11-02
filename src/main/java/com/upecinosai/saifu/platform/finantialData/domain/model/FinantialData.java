@@ -16,7 +16,7 @@ public class FinantialData {
     @Column(name = "ID_USUARIO", nullable = false)
     private Long idUsuario;
 
-    @Column(name = "TIPO_DATO", columnDefinition = "CLOB")
+    @Column(name = "TIPO_DATO", columnDefinition = "TEXT")
     private String tipoDato;
 
     @Column(name = "MONTO", precision = 10, scale = 2)
@@ -25,7 +25,7 @@ public class FinantialData {
     @Column(name = "FECHA")
     private LocalDate fecha;
 
-    @Column(name = "DESCRIPCION", columnDefinition = "CLOB")
+    @Column(name = "DESCRIPCION", columnDefinition = "TEXT")
     private String descripcion;
 
     // Getters y Setters
