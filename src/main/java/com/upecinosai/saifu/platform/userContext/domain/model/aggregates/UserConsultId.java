@@ -1,11 +1,10 @@
 package com.upecinosai.saifu.platform.userContext.domain.model.aggregates;
 
+import jakarta.persistence.Column;
 
-import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 
-public class UserConsultId implements Serializable {
+public class UserConsultId {
     @Column(name = "ID_USUARIO")
     private Long userId;
 

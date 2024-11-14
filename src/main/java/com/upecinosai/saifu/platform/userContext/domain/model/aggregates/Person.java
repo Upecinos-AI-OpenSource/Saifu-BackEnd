@@ -1,12 +1,11 @@
 package com.upecinosai.saifu.platform.userContext.domain.model.aggregates;
 
+import com.upecinosai.saifu.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import com.upecinosai.saifu.platform.userContext.domain.model.commands.CreatePersonCommand;
 import com.upecinosai.saifu.platform.userContext.domain.model.valueobjects.EmailAddress;
 import com.upecinosai.saifu.platform.userContext.domain.model.valueobjects.PersonName;
 import com.upecinosai.saifu.platform.userContext.domain.model.valueobjects.StreetAddress;
-import com.upecinosai.saifu.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Person extends AuditableAbstractAggregateRoot<Person> {

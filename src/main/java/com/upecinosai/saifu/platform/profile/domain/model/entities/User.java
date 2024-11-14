@@ -2,11 +2,11 @@ package com.upecinosai.saifu.platform.profile.domain.model.entities;
 
 import com.upecinosai.saifu.platform.profile.domain.model.commands.CreateUserCommand;
 import com.upecinosai.saifu.platform.profile.domain.model.valueObjects.State;
+import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @Entity

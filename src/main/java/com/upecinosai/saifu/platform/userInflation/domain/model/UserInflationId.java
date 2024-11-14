@@ -1,7 +1,9 @@
 package com.upecinosai.saifu.platform.userInflation.domain.model;
 
 
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+
 import java.io.Serializable;
 import java.util.Objects;
 

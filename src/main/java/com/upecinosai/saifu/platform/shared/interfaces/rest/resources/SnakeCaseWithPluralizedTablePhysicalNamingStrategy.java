@@ -14,12 +14,12 @@ public class SnakeCaseWithPluralizedTablePhysicalNamingStrategy implements Physi
 
     @Override
     public Identifier toPhysicalSchemaName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return this.toSnakeCase(identifier);
+        return this.toSnakeCase(this.toPlural(identifier));
     }
 
     @Override
     public Identifier toPhysicalTableName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return this.toSnakeCase(this.toPlural(identifier));
+        return this.toSnakeCase(identifier);
     }
 
     @Override
@@ -32,19 +32,20 @@ public class SnakeCaseWithPluralizedTablePhysicalNamingStrategy implements Physi
         return this.toSnakeCase(identifier);
     }
 
-    private Identifier toSnakeCase(final Identifier identifier) {
+    private Identifier toSnakeCase(Identifier identifier) {
         if (identifier == null) {
             return null;
         }
-        final String regex = "([a-z])([A-Z])";
-        final String replacement = "$1_$2";
-        final String newName = identifier.getText()
-                .replaceAll(regex, replacement)
-                .toLowerCase();
-        return Identifier.toIdentifier(newName);
+        String regex = "([a-z])([A-Z])";
+        String replacement = "$1_$2";
+        String snakeCase = identifier.getText().replaceAll(regex, replacement).toLowerCase();
+        return Identifier.toIdentifier(snakeCase);
     }
 
     private Identifier toPlural(final Identifier identifier) {
+        if (identifier == null) {
+            return null;
+        }
         final String newName = pluralize(identifier.getText());
         return Identifier.toIdentifier(newName);
     }

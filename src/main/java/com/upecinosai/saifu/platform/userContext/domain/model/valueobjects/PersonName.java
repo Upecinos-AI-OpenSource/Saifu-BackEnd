@@ -1,7 +1,6 @@
 package com.upecinosai.saifu.platform.userContext.domain.model.valueobjects;
 
-
-import javax.persistence.*;
+import jakarta.persistence.Embeddable;
 
 @Embeddable
 public record PersonName(String firstName, String lastName) {

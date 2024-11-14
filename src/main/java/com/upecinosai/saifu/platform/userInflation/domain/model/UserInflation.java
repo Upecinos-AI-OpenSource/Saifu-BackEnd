@@ -1,7 +1,8 @@
 package com.upecinosai.saifu.platform.userInflation.domain.model;
 
-
-import javax.persistence.*;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "USER_INFLATION")

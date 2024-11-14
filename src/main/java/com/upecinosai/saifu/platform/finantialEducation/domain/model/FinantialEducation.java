@@ -1,7 +1,9 @@
 package com.upecinosai.saifu.platform.finantialEducation.domain.model;
 
-
-import javax.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class FinantialEducation {

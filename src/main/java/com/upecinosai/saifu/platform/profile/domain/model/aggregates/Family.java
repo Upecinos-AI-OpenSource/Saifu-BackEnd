@@ -3,11 +3,10 @@ package com.upecinosai.saifu.platform.profile.domain.model.aggregates;
 import com.upecinosai.saifu.platform.profile.domain.model.commands.CreateFamilyCommand;
 import com.upecinosai.saifu.platform.profile.domain.model.entities.User;
 import com.upecinosai.saifu.platform.profile.domain.model.valueObjects.PhoneNumber;
+import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.*;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)

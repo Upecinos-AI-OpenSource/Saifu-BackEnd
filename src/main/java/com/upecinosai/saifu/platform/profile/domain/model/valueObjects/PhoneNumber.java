@@ -1,8 +1,7 @@
 package com.upecinosai.saifu.platform.profile.domain.model.valueObjects;
 
+import jakarta.persistence.Embeddable;
 import lombok.Value;
-
-import javax.persistence.Embeddable;
 
 @Value
 @Embeddable
@@ -20,3 +19,4 @@ public class PhoneNumber {
         this.value = value;
     }
 }
+

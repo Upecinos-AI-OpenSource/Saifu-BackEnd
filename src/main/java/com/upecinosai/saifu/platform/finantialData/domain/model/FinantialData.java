@@ -1,6 +1,7 @@
 package com.upecinosai.saifu.platform.finantialData.domain.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

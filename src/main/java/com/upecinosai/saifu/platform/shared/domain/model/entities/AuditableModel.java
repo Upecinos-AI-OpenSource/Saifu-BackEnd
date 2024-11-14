@@ -1,25 +1,30 @@
 package com.upecinosai.saifu.platform.shared.domain.model.entities;
 
-
+import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public abstract class AuditableModel {
+public class AuditableModel {
+
+    @Getter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Getter
     @CreatedDate
-    @Column(nullable = false, updatable = false)
+    @Column(nullable = true, updatable = false)
     private Date createdAt;
 
     @Getter
     @LastModifiedDate
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Date updatedAt;
 }
+
