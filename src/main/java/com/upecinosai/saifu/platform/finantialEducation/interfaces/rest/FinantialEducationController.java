@@ -2,7 +2,11 @@ package com.upecinosai.saifu.platform.finantialEducation.interfaces.rest;
 
 import com.upecinosai.saifu.platform.finantialEducation.aplication.internal.commandservices.FinantialEducationCommandService;
 import com.upecinosai.saifu.platform.finantialEducation.aplication.internal.queryservices.FinantialEducationQueryService;
-import com.upecinosai.saifu.platform.finantialEducation.domain.model.FinantialEducation;
+import com.upecinosai.saifu.platform.finantialEducation.aplication.internal.queryservices.PreguntasQueryService;
+import com.upecinosai.saifu.platform.finantialEducation.aplication.internal.queryservices.RespuestasQueryService;
+import com.upecinosai.saifu.platform.finantialEducation.domain.model.aggregates.FinantialEducation;
+import com.upecinosai.saifu.platform.finantialEducation.domain.model.entities.Preguntas;
+import com.upecinosai.saifu.platform.finantialEducation.domain.model.entities.Respuestas;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +18,18 @@ public class FinantialEducationController {
 
     private final FinantialEducationCommandService commandService;
     private final FinantialEducationQueryService queryService;
+    private final PreguntasQueryService preguntasQueryService;
+    private final RespuestasQueryService respuestasQueryService;
 
-    public FinantialEducationController(FinantialEducationCommandService commandService, FinantialEducationQueryService queryService) {
+    public FinantialEducationController(
+            FinantialEducationCommandService commandService,
+            FinantialEducationQueryService queryService,
+            PreguntasQueryService preguntasQueryService,
+            RespuestasQueryService respuestasQueryService) {
         this.commandService = commandService;
         this.queryService = queryService;
+        this.preguntasQueryService = preguntasQueryService;
+        this.respuestasQueryService = respuestasQueryService;
     }
 
     @GetMapping
@@ -42,8 +54,13 @@ public class FinantialEducationController {
         return queryService.findById(id)
                 .map(existing -> {
                     existing.setTitulo(updatedEducation.getTitulo());
-                    existing.setIdRespuesta(updatedEducation.getIdRespuesta());
-                    existing.setIdPreguntas(updatedEducation.getIdPreguntas());
+                    Preguntas pregunta = preguntasQueryService.findById(updatedEducation.getPregunta().getId())
+                            .orElseThrow(() -> new IllegalArgumentException("Pregunta no encontrada"));
+                    existing.setPregunta(pregunta);
+                    Respuestas respuesta = respuestasQueryService.findById(updatedEducation.getRespuesta().getId())
+                            .orElseThrow(() -> new IllegalArgumentException("Respuesta no encontrada"));
+                    existing.setRespuesta(respuesta);
+
                     return ResponseEntity.ok(commandService.save(existing));
                 })
                 .orElse(ResponseEntity.notFound().build());

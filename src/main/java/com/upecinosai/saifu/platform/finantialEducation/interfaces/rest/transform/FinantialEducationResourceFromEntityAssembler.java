@@ -1,7 +1,9 @@
 package com.upecinosai.saifu.platform.finantialEducation.interfaces.rest.transform;
 
-import com.upecinosai.saifu.platform.finantialEducation.domain.model.FinantialEducation;
+import com.upecinosai.saifu.platform.finantialEducation.domain.model.aggregates.FinantialEducation;
 import com.upecinosai.saifu.platform.finantialEducation.interfaces.rest.resources.FinantialEducationResource;
+import com.upecinosai.saifu.platform.finantialEducation.interfaces.rest.resources.PreguntaResource;
+import com.upecinosai.saifu.platform.finantialEducation.interfaces.rest.resources.RespuestaResource;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,8 +13,17 @@ public class FinantialEducationResourceFromEntityAssembler {
         FinantialEducationResource resource = new FinantialEducationResource();
         resource.setId(entity.getId());
         resource.setTitulo(entity.getTitulo());
-        resource.setIdRespuesta(entity.getIdRespuesta());
-        resource.setIdPreguntas(entity.getIdPreguntas());
+
+        PreguntaResource preguntaResource = new PreguntaResource();
+        preguntaResource.setId(entity.getPregunta().getId());
+        preguntaResource.setTexto(entity.getPregunta().getTexto());
+        resource.setPregunta(preguntaResource);
+
+        RespuestaResource respuestaResource = new RespuestaResource();
+        respuestaResource.setId(entity.getRespuesta().getId());
+        respuestaResource.setTexto(entity.getRespuesta().getTexto());
+        resource.setRespuesta(respuestaResource);
+
         return resource;
     }
 }

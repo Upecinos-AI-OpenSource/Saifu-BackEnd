@@ -4,8 +4,8 @@ public class FinantialEducationResource {
 
     private Long id;
     private String titulo;
-    private Long idRespuesta;
-    private Long idPreguntas;
+    private PreguntaResource pregunta;
+    private RespuestaResource respuesta;
 
     // Getters y setters
 
@@ -25,19 +25,11 @@ public class FinantialEducationResource {
         this.titulo = titulo;
     }
 
-    public Long getIdRespuesta() {
-        return idRespuesta;
-    }
+    public PreguntaResource getPregunta() { return pregunta; }
 
-    public void setIdRespuesta(Long idRespuesta) {
-        this.idRespuesta = idRespuesta;
-    }
+    public void setPregunta(PreguntaResource pregunta) { this.pregunta = pregunta; }
 
-    public Long getIdPreguntas() {
-        return idPreguntas;
-    }
+    public RespuestaResource getRespuesta() { return respuesta; }
 
-    public void setIdPreguntas(Long idPreguntas) {
-        this.idPreguntas = idPreguntas;
-    }
+    public void setRespuesta(RespuestaResource respuesta) { this.respuesta = respuesta; }
 }

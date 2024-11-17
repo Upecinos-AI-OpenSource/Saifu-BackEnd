@@ -1,6 +1,6 @@
 package com.upecinosai.saifu.platform.finantialEducation.aplication.internal.commandservices;
 
-import com.upecinosai.saifu.platform.finantialEducation.domain.model.FinantialEducation;
+import com.upecinosai.saifu.platform.finantialEducation.domain.model.aggregates.FinantialEducation;
 import com.upecinosai.saifu.platform.finantialEducation.infrastructure.persistence.jpa.FinantialEducationRepository;
 import org.springframework.stereotype.Service;
 
