@@ -1,4 +1,4 @@
-package com.upecinosai.saifu.platform.shared.interfaces.rest.resources;
+package com.upecinosai.saifu.platform.shared.infrastructure.persistence.jpa.configuration.strategy;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
