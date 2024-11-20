@@ -9,6 +9,43 @@ import jakarta.persistence.*;
 
 @Entity
 public class Person extends AuditableAbstractAggregateRoot<Person> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public PersonName getName() {
+        return name;
+    }
+
+    public void setName(PersonName name) {
+        this.name = name;
+    }
+
+    public EmailAddress getEmail() {
+        return email;
+    }
+
+    public void setEmail(EmailAddress email) {
+        this.email = email;
+    }
+
+    public StreetAddress getAddress() {
+        return address;
+    }
+
+    public void setAddress(StreetAddress address) {
+        this.address = address;
+    }
+
     @Embedded
     private PersonName name;
 
@@ -58,5 +95,7 @@ public class Person extends AuditableAbstractAggregateRoot<Person> {
     public String getStreetAddress() {
         return address.getStreetAddress();
     }
+
+
 
 }

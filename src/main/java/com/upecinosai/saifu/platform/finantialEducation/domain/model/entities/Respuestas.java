@@ -1,12 +1,17 @@
 package com.upecinosai.saifu.platform.finantialEducation.domain.model.entities;
 
 import com.upecinosai.saifu.platform.shared.domain.model.entities.AuditableModel;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
 
 @Entity
 public class Respuestas extends AuditableModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String texto;
 
     @ManyToOne
@@ -15,6 +20,14 @@ public class Respuestas extends AuditableModel {
 
     // Constructor, getters y setters
     public Respuestas() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTexto() {
         return texto;

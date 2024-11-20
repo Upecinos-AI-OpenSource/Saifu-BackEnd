@@ -1,13 +1,25 @@
 package com.upecinosai.saifu.platform.userContext.domain.model.entities;
 
 import com.upecinosai.saifu.platform.shared.domain.model.entities.AuditableModel;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
 public class ConsultaAsesoria extends AuditableModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Column(name = "TIPO_CONSULTA", nullable = false)
     private String tipoConsulta;
 
